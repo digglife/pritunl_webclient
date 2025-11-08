@@ -50,6 +50,7 @@ Use this checklist to complete your migration to a distributable Python library.
 ### 3. ✅ Set Up Git Repository (COMPLETED)
 
 **Checklist:**
+
 - [x] Initialize git repository
 - [x] Add all files
 - [x] Create initial commit

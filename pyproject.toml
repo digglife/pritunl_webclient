@@ -42,10 +42,10 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/pritunl-client"
-Documentation = "https://github.com/yourusername/pritunl-client#readme"
-Repository = "https://github.com/yourusername/pritunl-client"
-Issues = "https://github.com/yourusername/pritunl-client/issues"
+Homepage = "https://github.com/digglife/pritunl_client"
+Documentation = "https://github.com/digglife/pritunl_client#readme"
+Repository = "https://github.com/digglife/pritunl_client"
+Issues = "https://github.com/digglife/pritunl_client/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/pritunl_client"]
