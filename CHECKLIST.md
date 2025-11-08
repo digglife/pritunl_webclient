@@ -25,79 +25,36 @@ Use this checklist to complete your migration to a distributable Python library.
 
 ## 📝 TODO: Customize for Your Project
 
-### 1. Update Project Metadata
+### 1. ✅ Update Project Metadata (COMPLETED)
 
-Edit `pyproject.toml`:
-
-```toml
-[project]
-name = "pritunl-client"  # ✅ Good
-authors = [
-    {name = "Your Name", email = "your.email@example.com"},  # ⚠️ UPDATE THIS
-]
-
-[project.urls]
-Homepage = "https://github.com/yourusername/pritunl-client"  # ⚠️ UPDATE THIS
-Repository = "https://github.com/yourusername/pritunl-client"  # ⚠️ UPDATE THIS
-Issues = "https://github.com/yourusername/pritunl-client/issues"  # ⚠️ UPDATE THIS
-```
+~~Edit `pyproject.toml`:~~
 
 **Checklist:**
 
-- [ ] Update author name
-- [ ] Update author email
-- [ ] Update repository URLs
-- [ ] Verify project description
-- [ ] Verify keywords
+- [x] Update author name → digglife
+- [x] Update author email → s-zhu@upgarage-g.co.jp
+- [x] Update repository URLs → github.com/digglife/pritunl_client
+- [x] Verify project description
+- [x] Verify keywords
 
-### 2. Update README Badges
+### 2. ✅ Update README Badges (COMPLETED)
 
-Edit `README.md` and update these placeholders:
-
-```markdown
-[![Tests](https://github.com/yourusername/pritunl-client/workflows/tests/badge.svg)]
-^^^^^^^^^^^^^ UPDATE THIS
-
-[![Coverage](https://codecov.io/gh/yourusername/pritunl-client/branch/main/graph/badge.svg)]
-^^^^^^^^^^^^^ UPDATE THIS
-```
+~~Edit `README.md` and update these placeholders:~~
 
 **Checklist:**
 
-- [ ] Replace `yourusername` with actual GitHub username
-- [ ] Update all badge URLs
+- [x] Replace `yourusername` with actual GitHub username (digglife)
+- [x] Update all badge URLs
 - [ ] Test that badges work (after pushing to GitHub)
 
-### 3. Set Up Git Repository
+### 3. ✅ Set Up Git Repository (COMPLETED)
 
-```bash
-cd /Users/zhu/Dev/zto/vpnbot
-
-# Initialize git (if not already)
-git init
-
-# Add all files
-git add .
-
-# Make initial commit
-git commit -m "feat: modern Python package structure
-
-- Migrate to src layout
-- Add comprehensive documentation
-- Configure modern tooling (uv, ruff, mypy)
-- Add CI/CD with GitHub Actions
-- Build distributable packages
-"
-
-# Create main branch
-git branch -M main
-
-# Add remote (create repo on GitHub first)
-git remote add origin https://github.com/yourusername/pritunl-client.git
-
-# Push
-git push -u origin main
-```
+**Checklist:**
+- [x] Initialize git repository
+- [x] Add all files
+- [x] Create initial commit
+- [x] Push to GitHub (github.com/digglife/pritunl_client)
+- [x] Clean up old files (pritunl_client/, requirements.txt, pytest.ini, .egg-info/)
 
 **Checklist:**
 
@@ -181,33 +138,18 @@ On GitHub repository settings:
 - [ ] Store token securely
 - [ ] (Optional) Add to GitHub secrets for auto-publish
 
-### 7. Clean Up Old Files
+### 7. ✅ Clean Up Old Files (COMPLETED)
 
-Remove files that are no longer needed:
-
-```bash
-# Old package location (code now in src/)
-rm -rf pritunl_client/
-
-# Old build artifacts
-rm -rf pritunl_client.egg-info/
-
-# Old config (now in pyproject.toml)
-rm requirements.txt
-rm pytest.ini
-
-# (Optional) Project notes
-rm pritunl-requests.md
-```
+~~Remove files that are no longer needed:~~
 
 **Checklist:**
 
-- [ ] Remove old `pritunl_client/` directory
-- [ ] Remove `pritunl_client.egg-info/`
-- [ ] Remove `requirements.txt`
-- [ ] Remove `pytest.ini`
+- [x] Remove old `pritunl_client/` directory
+- [x] Remove `pritunl_client.egg-info/`
+- [x] Remove `requirements.txt`
+- [x] Remove `pytest.ini`
 - [ ] (Optional) Remove `pritunl-requests.md`
-- [ ] Verify tests still pass after cleanup
+- [x] Verify tests still pass after cleanup
 
 ### 8. Test the Package Locally
 
