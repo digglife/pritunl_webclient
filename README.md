@@ -1,10 +1,10 @@
-# pritunl-client
+# pritunl-webclient
 
 [![PyPI version](https://badge.fury.io/py/pritunl-client.svg)](https://badge.fury.io/py/pritunl-client)
-[![Python Versions](https://img.shields.io/pypi/pyversions/pritunl-client.svg)](https://pypi.org/project/pritunl-client/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pritunl-webclient.svg)](https://pypi.org/project/pritunl-webclient/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/digglife/pritunl_webclient/actions/workflows/tests.yml/badge.svg)](https://github.com/digglife/pritunl_webclient/actions/workflows/tests.yml)
-[![Coverage](https://codecov.io/gh/digglife/pritunl_webclient/branch/main/graph/badge.svg)](https://codecov.io/gh/digglife/pritunl_webclient)
+[![codecov](https://codecov.io/gh/digglife/pritunl_webclient/graph/badge.svg?token=kfeIv055RE)](https://codecov.io/gh/digglife/pritunl_webclient)
 
 A modern, fully-typed Python client for interacting with the Pritunl VPN API.
 
@@ -22,13 +22,13 @@ A modern, fully-typed Python client for interacting with the Pritunl VPN API.
 ### Using uv (recommended)
 
 ```bash
-uv pip install pritunl-client
+uv pip install pritunl-webclient
 ```
 
 ### Using pip
 
 ```bash
-pip install pritunl-client
+pip install pritunl-webclient
 ```
 
 ### From source
@@ -197,8 +197,8 @@ Close the HTTP client connection.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pritunl-client.git
-cd pritunl-client
+git clone https://github.com/digglife/pritunl-webclient.git
+cd pritunl-webclient
 
 # Install uv if you haven't already
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -278,7 +278,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Links
 
-- **Documentation**: [GitHub README](https://github.com/yourusername/pritunl-client#readme)
-- **Source Code**: [GitHub](https://github.com/yourusername/pritunl-client)
-- **Issue Tracker**: [GitHub Issues](https://github.com/yourusername/pritunl-client/issues)
-- **PyPI**: [pritunl-client](https://pypi.org/project/pritunl-client/)
+- **Documentation**: [GitHub README](https://github.com/digglife/pritunl-webclient#readme)
+- **Source Code**: [GitHub](https://github.com/digglife/pritunl-webclient)
+- **Issue Tracker**: [GitHub Issues](https://github.com/digglife/pritunl-webclient/issues)
+- **PyPI**: [pritunl-webclient](https://pypi.org/project/pritunl-webclient/)
