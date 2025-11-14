@@ -532,3 +532,11 @@ class TestClose:
 
         # After closing, the client should not be usable
         assert client._client.is_closed
+
+    def test_context_manager(self, base_url):
+        """Test that context manager properly closes the client."""
+        with PritunlClient(base_url) as client:
+            assert not client._client.is_closed
+
+        # After exiting context, client should be closed
+        assert client._client.is_closed
