@@ -22,7 +22,7 @@ A modern, fully-typed Python client for interacting with the Pritunl VPN API.
 ### Using uv (recommended)
 
 ```bash
-uv pip install pritunl-webclient
+uv add pritunl-webclient
 ```
 
 ### Using pip
@@ -55,7 +55,7 @@ servers = client.list_servers()
 print(servers)
 
 # Start a server
-server_id = "5fefecb610135c15af1b472b"
+server_id = "ididid"
 result = client.start_server(server_id)
 
 # Check server status
