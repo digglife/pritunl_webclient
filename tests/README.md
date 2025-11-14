@@ -1,6 +1,6 @@
-# PritunlClient Tests
+# Client Tests
 
-Comprehensive test suite for the `PritunlClient` class.
+Comprehensive test suite for the `Client` class.
 
 ## Running Tests
 
@@ -19,7 +19,7 @@ pytest tests/test_client.py --cov=pritunl_webclient --cov-report=html
 
 The test suite includes **36 tests** covering:
 
-### 1. Client Initialization (`TestPritunlClientInit`)
+### 1. Client Initialization (`TestClientInit`)
 
 - URL normalization (trailing slash removal)
 - Default values initialization
@@ -101,11 +101,11 @@ Base URL for testing (`https://pritunl.example.com`)
 
 ### `client`
 
-Unauthenticated `PritunlClient` instance with auto-cleanup
+Unauthenticated `Client` instance with auto-cleanup
 
 ### `authenticated_client`
 
-Pre-authenticated `PritunlClient` instance with:
+Pre-authenticated `Client` instance with:
 
 - Username: `testuser`
 - Password: `testpass`

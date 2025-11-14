@@ -17,22 +17,31 @@ def require_auth(func):
     return wrapper
 
 
-class PritunlClient:
-    def __init__(self, base_url: str, verify: bool = True, timeout: int = 10) -> None:
+class Client:
+    def __init__(
+        self,
+        base_url: str,
+        verify: bool = True,
+        timeout: int = 10,
+        username: Optional[str] = None,
+        password: Optional[str] = None,
+    ) -> None:
         """Create a new client.
 
         Args:
             base_url: Base URL of the Pritunl web UI (e.g. https://172.16.5.94)
             verify: Whether to verify TLS certificates. Set False for self-signed certs.
             timeout: Request timeout in seconds.
+            username: Optional username for automatic login on first auth requirement.
+            password: Optional password for automatic login on first auth requirement.
         """
         self.base_url = base_url.rstrip("/")
         self._client = httpx.Client(base_url=self.base_url, verify=verify, timeout=timeout)
         self._csrf_token: Optional[str] = None
-        self._username: Optional[str] = None
-        self._password: Optional[str] = None
+        self._username: Optional[str] = username
+        self._password: Optional[str] = password
 
-    def __enter__(self) -> "PritunlClient":
+    def __enter__(self) -> "Client":
         """Context manager entry."""
         return self
 

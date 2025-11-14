@@ -42,10 +42,10 @@ uv pip install -e .
 ## Quick Start
 
 ```python
-from pritunl_webclient import PritunlClient
+from pritunl_webclient import Client
 
 # Create a client instance
-client = PritunlClient("https://vpn.example.com", verify=False)
+client = Client("https://vpn.example.com", verify=False)
 
 # Login
 client.login("admin", "password")
@@ -72,9 +72,9 @@ client.close()
 ### Using as a Context Manager
 
 ```python
-from pritunl_webclient import PritunlClient
+from pritunl_webclient import Client
 
-with PritunlClient("https://vpn.example.com", verify=False) as client:
+with Client("https://vpn.example.com", verify=False) as client:
     client.login("admin", "password")
     servers = client.list_servers()
     print(servers)
@@ -83,9 +83,9 @@ with PritunlClient("https://vpn.example.com", verify=False) as client:
 
 ## API Reference
 
-### PritunlClient
+### Client
 
-#### `__init__(base_url: str, verify: bool = True, timeout: int = 10)`
+#### `__init__(base_url: str, verify: bool = True, timeout: int = 10, username: Optional[str] = None, password: Optional[str] = None)`
 
 Create a new Pritunl client.
 
@@ -93,6 +93,9 @@ Create a new Pritunl client.
 
 - `base_url`: Base URL of the Pritunl web UI (e.g., `https://vpn.example.com`)
 - `verify`: Whether to verify TLS certificates. Set to `False` for self-signed certificates
+- `timeout`: Request timeout in seconds (default: 10)
+- `username`: Optional username for automatic login on first auth requirement
+- `password`: Optional password for automatic login on first auth requirement
 - `timeout`: Request timeout in seconds (default: 10)
 
 #### `login(username: str, password: str) -> None`

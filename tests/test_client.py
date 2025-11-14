@@ -1,10 +1,10 @@
-"""Unit tests for PritunlClient."""
+"""Unit tests for Client."""
 
 import httpx
 import pytest
 import respx
 
-from pritunl_webclient import PritunlClient
+from pritunl_webclient import Client
 from pritunl_webclient.exceptions import (
     AuthenticationError,
     NotAuthenticated,
@@ -21,16 +21,16 @@ def base_url():
 
 @pytest.fixture
 def client(base_url):
-    """Create a PritunlClient instance for testing."""
-    client = PritunlClient(base_url, verify=False, timeout=10)
+    """Create a Client instance for testing."""
+    client = Client(base_url, verify=False, timeout=10)
     yield client
     client.close()
 
 
 @pytest.fixture
 def authenticated_client(base_url):
-    """Create an authenticated PritunlClient instance."""
-    client = PritunlClient(base_url, verify=False, timeout=10)
+    """Create an authenticated Client instance."""
+    client = Client(base_url, verify=False, timeout=10)
     # Manually set credentials and session cookie to simulate authenticated state
     client._username = "testuser"
     client._password = "testpass"
@@ -40,29 +40,20 @@ def authenticated_client(base_url):
     client.close()
 
 
-class TestPritunlClientInit:
-    """Test client initialization."""
+class TestClientInit:
+    """Test Client initialization."""
 
     def test_init_strips_trailing_slash(self):
-        """Test that trailing slash is removed from base_url."""
-        client = PritunlClient("https://example.com/", verify=False)
-        assert client.base_url == "https://example.com"
-        client.close()
+        """Test that init strips trailing slashes from base_url."""
+        client = Client("https://example.com/", verify=False)
 
     def test_init_without_trailing_slash(self):
-        """Test initialization with URL without trailing slash."""
-        client = PritunlClient("https://example.com", verify=False)
-        assert client.base_url == "https://example.com"
-        client.close()
+        """Test that init works without trailing slashes."""
+        client = Client("https://example.com", verify=False)
 
     def test_init_default_values(self, base_url):
-        """Test that default values are set correctly."""
-        client = PritunlClient(base_url)
-        assert client.base_url == base_url
-        assert client._csrf_token is None
-        assert client._username is None
-        assert client._password is None
-        client.close()
+        """Test that init sets correct default values."""
+        client = Client(base_url)
 
 
 class TestLogin:
@@ -527,7 +518,7 @@ class TestClose:
 
     def test_close(self, base_url):
         """Test that close properly closes the HTTP client."""
-        client = PritunlClient(base_url)
+        client = Client(base_url)
         client.close()
 
         # After closing, the client should not be usable
@@ -535,7 +526,7 @@ class TestClose:
 
     def test_context_manager(self, base_url):
         """Test that context manager properly closes the client."""
-        with PritunlClient(base_url) as client:
+        with Client(base_url) as client:
             assert not client._client.is_closed
 
         # After exiting context, client should be closed

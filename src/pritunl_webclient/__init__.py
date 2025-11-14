@@ -1,21 +1,16 @@
 """pritunl_webclient
 
-Simple client for interacting with a Pritunl web dashboard using httpx.
+A modern Python client for Pritunl Web API.
 
-Public API:
- - PritunlClient
-
+Main exports:
+ - Client
 """
 
-from .client import PritunlClient
-from .exceptions import AuthenticationError, NotAuthenticated, PritunlError, ServerNotFound
+from .client import Client
+from .exceptions import PritunlError
 
-__version__ = "0.1.0"
+__version__ = "0.2.1"
 __all__ = [
-    "PritunlClient",
+    "Client",
     "PritunlError",
-    "AuthenticationError",
-    "NotAuthenticated",
-    "ServerNotFound",
-    "__version__",
 ]
