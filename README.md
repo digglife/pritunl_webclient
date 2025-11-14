@@ -1,6 +1,6 @@
 # pritunl-webclient
 
-[![PyPI version](https://badge.fury.io/py/pritunl-client.svg)](https://badge.fury.io/py/pritunl-client)
+[![PyPI version](https://badge.fury.io/py/pritunl-webclient.svg)](https://badge.fury.io/py/pritunl-webclient)
 [![Python Versions](https://img.shields.io/pypi/pyversions/pritunl-webclient.svg)](https://pypi.org/project/pritunl-webclient/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://github.com/digglife/pritunl_webclient/actions/workflows/tests.yml/badge.svg)](https://github.com/digglife/pritunl_webclient/actions/workflows/tests.yml)
