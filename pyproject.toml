@@ -3,24 +3,22 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pritunl-client"
+name = "pritunl-webclient"
 version = "0.1.0"
-description = "Modern Python client for Pritunl VPN API"
+description = "Modern Python client for Pritunl Web API"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "digglife", email = "s-zhu@upgarage-g.co.jp"},
+    {name = "digglife", email = "digglfe@gmai.com"},
 ]
-keywords = ["pritunl", "vpn", "api", "client"]
+keywords = ["pritunl", "vpn", "api"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -42,13 +40,13 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/digglife/pritunl_client"
-Documentation = "https://github.com/digglife/pritunl_client#readme"
-Repository = "https://github.com/digglife/pritunl_client"
-Issues = "https://github.com/digglife/pritunl_client/issues"
+Homepage = "https://github.com/digglife/pritunl_webclient"
+Documentation = "https://github.com/digglife/pritunl_webclient#readme"
+Repository = "https://github.com/digglife/pritunl_webclient"
+Issues = "https://github.com/digglife/pritunl_webclient/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pritunl_client"]
+packages = ["src/pritunl_webclient"]
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -68,9 +66,7 @@ addopts = [
     "-v",
     "--tb=short",
     "--strict-markers",
-    "--cov=pritunl_client",
-    "--cov-report=term-missing",
-    "--cov-report=html",
+    "--cov=pritunl_webclient"
 ]
 markers = [
     "slow: marks tests as slow (deselect with '-m \"not slow\"')",
@@ -124,11 +120,11 @@ ignore = [
 "__init__.py" = ["F401"]  # imported but unused
 
 [tool.ruff.lint.isort]
-known-first-party = ["pritunl_client"]
+known-first-party = ["pritunl_webclient"]
 
 # Mypy configuration (type checking)
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false

@@ -1,5 +1,5 @@
 class PritunlError(Exception):
-    """Base error for pritunl_client"""
+    """Base error for pritunl_webclient"""
 
 
 class AuthenticationError(PritunlError):

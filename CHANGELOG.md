@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Type hints throughout the codebase
 - Auto-reconnection on session expiry
 - Modern packaging with pyproject.toml
-- Support for Python 3.8+
+- Support for Python 3.10+
 
 ### Features
 

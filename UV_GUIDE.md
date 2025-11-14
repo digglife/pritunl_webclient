@@ -133,7 +133,7 @@ mypy src
 pytest
 
 # Run with coverage
-pytest --cov=pritunl_client
+pytest --cov=pritunl_webclient
 
 # Run specific test
 pytest tests/test_client.py::TestLogin

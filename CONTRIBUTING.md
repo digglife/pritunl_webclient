@@ -6,7 +6,7 @@ Thank you for your interest in contributing to pritunl-client! This document pro
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - [uv](https://github.com/astral-sh/uv) (recommended) or pip
 
 ### Setting Up Your Development Environment
@@ -41,7 +41,7 @@ Thank you for your interest in contributing to pritunl-client! This document pro
 pytest
 
 # Run with coverage
-pytest --cov=pritunl_client
+pytest --cov=pritunl_webclient
 
 # Run specific test file
 pytest tests/test_client.py
@@ -103,7 +103,7 @@ Before submitting a pull request, make sure to:
 
 5. **Ensure 100% test coverage**
    ```bash
-   pytest --cov=pritunl_client --cov-report=term-missing
+   pytest --cov=pritunl_webclient --cov-report=term-missing
    ```
 
 ## Pull Request Process

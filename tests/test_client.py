@@ -4,8 +4,8 @@ import httpx
 import pytest
 import respx
 
-from pritunl_client import PritunlClient
-from pritunl_client.exceptions import (
+from pritunl_webclient import PritunlClient
+from pritunl_webclient.exceptions import (
     AuthenticationError,
     NotAuthenticated,
     PritunlError,

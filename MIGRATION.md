@@ -31,7 +31,7 @@ Your project has been successfully transformed into a **modern, distributable Py
 
 - ✅ **GitHub Actions** - Automated testing workflow
 - ✅ **Multi-platform** - Tests on Linux, macOS, Windows
-- ✅ **Multi-version** - Tests Python 3.8-3.13
+- ✅ **Multi-version** - Tests Python 3.10-3.13
 - ✅ **Coverage reporting** - Integrated with Codecov
 
 ## New Directory Structure

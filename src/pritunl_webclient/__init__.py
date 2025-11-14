@@ -1,4 +1,4 @@
-"""pritunl_client
+"""pritunl_webclient
 
 Simple client for interacting with a Pritunl web dashboard using httpx.
 

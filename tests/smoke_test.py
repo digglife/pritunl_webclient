@@ -1,6 +1,6 @@
 """Quick smoke test to ensure package imports and basic construction work."""
 
-from pritunl_client import PritunlClient
+from pritunl_webclient import PritunlClient
 
 
 def run():

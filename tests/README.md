@@ -12,7 +12,7 @@ pytest tests/test_client.py -v
 pytest tests/test_client.py::TestLogin -v
 
 # Run with coverage
-pytest tests/test_client.py --cov=pritunl_client --cov-report=html
+pytest tests/test_client.py --cov=pritunl_webclient --cov-report=html
 ```
 
 ## Test Coverage

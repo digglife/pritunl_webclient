@@ -17,13 +17,13 @@ pip install -e ".[dev]"
 pytest tests/test_client.py -v
 
 # Run with coverage
-pytest --cov=pritunl_client tests/test_client.py
+pytest --cov=pritunl_webclient tests/test_client.py
 
 # Run with coverage and show missing lines
-pytest --cov=pritunl_client tests/test_client.py --cov-report=term-missing
+pytest --cov=pritunl_webclient tests/test_client.py --cov-report=term-missing
 
 # Generate HTML coverage report
-pytest --cov=pritunl_client tests/test_client.py --cov-report=html
+pytest --cov=pritunl_webclient tests/test_client.py --cov-report=html
 # Then open htmlcov/index.html in your browser
 
 # Run specific test class
@@ -43,8 +43,8 @@ pytest tests/test_client.py -s
 
 Current coverage: **100%** ✅
 
-- `pritunl_client/__init__.py` - 100%
-- `pritunl_client/client.py` - 100%
-- `pritunl_client/exceptions.py` - 100%
+- `pritunl_webclient/__init__.py` - 100%
+- `pritunl_webclient/client.py` - 100%
+- `pritunl_webclient/exceptions.py` - 100%
 
 All 36 tests passing!

@@ -3,8 +3,8 @@
 [![PyPI version](https://badge.fury.io/py/pritunl-client.svg)](https://badge.fury.io/py/pritunl-client)
 [![Python Versions](https://img.shields.io/pypi/pyversions/pritunl-client.svg)](https://pypi.org/project/pritunl-client/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Tests](https://github.com/digglife/pritunl_client/workflows/tests/badge.svg)](https://github.com/digglife/pritunl_client/actions)
-[![Coverage](https://codecov.io/gh/digglife/pritunl_client/branch/main/graph/badge.svg)](https://codecov.io/gh/digglife/pritunl_client)
+[![Tests](https://github.com/digglife/pritunl_webclient/actions/workflows/tests.yml/badge.svg)](https://github.com/digglife/pritunl_webclient/actions/workflows/tests.yml)
+[![Coverage](https://codecov.io/gh/digglife/pritunl_webclient/branch/main/graph/badge.svg)](https://codecov.io/gh/digglife/pritunl_webclient)
 
 A modern, fully-typed Python client for interacting with the Pritunl VPN API.
 
@@ -34,15 +34,15 @@ pip install pritunl-client
 ### From source
 
 ```bash
-git clone https://github.com/digglife/pritunl_client.git
-cd pritunl_client
+git clone https://github.com/digglife/pritunl_webclient.git
+cd pritunl_webclient
 uv pip install -e .
 ```
 
 ## Quick Start
 
 ```python
-from pritunl_client import PritunlClient
+from pritunl_webclient import PritunlClient
 
 # Create a client instance
 client = PritunlClient("https://vpn.example.com", verify=False)
@@ -72,7 +72,7 @@ client.close()
 ### Using as a Context Manager
 
 ```python
-from pritunl_client import PritunlClient
+from pritunl_webclient import PritunlClient
 
 with PritunlClient("https://vpn.example.com", verify=False) as client:
     client.login("admin", "password")
@@ -216,7 +216,7 @@ uv pip install -e ".[dev]"
 pytest
 
 # Run with coverage
-pytest --cov=pritunl_client
+pytest --cov=pritunl_webclient
 
 # Run with verbose output
 pytest -vv
@@ -245,8 +245,8 @@ mypy src
 uv build
 
 # This creates:
-# - dist/pritunl_client-*.whl
-# - dist/pritunl_client-*.tar.gz
+# - dist/pritunl_webclient-*.whl
+# - dist/pritunl_webclient-*.tar.gz
 ```
 
 ## Notes
