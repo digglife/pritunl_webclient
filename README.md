@@ -252,6 +252,24 @@ uv build
 # - dist/pritunl_webclient-*.tar.gz
 ```
 
+### Publishing to PyPI
+
+Package publishing is automated via GitHub Actions and runs when a tag matching `v*` is pushed.
+
+```bash
+# Example: release version 0.3.0
+git tag v0.3.0
+git push origin v0.3.0
+```
+
+Before using automated publishing, configure PyPI Trusted Publishing:
+
+1. In PyPI, add a Trusted Publisher for this repository.
+2. Set workflow to `.github/workflows/publish.yml`.
+3. Set environment name to `pypi`.
+
+The workflow verifies that the tag version matches `pyproject.toml` before publishing.
+
 ## Notes
 
 - If your Pritunl server uses a self-signed certificate, set `verify=False` when creating the client
