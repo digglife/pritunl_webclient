@@ -19,7 +19,11 @@ def _build_client() -> Client:
     username = os.environ.get("PRITUNL_USERNAME")
     password = os.environ.get("PRITUNL_PASSWORD")
 
-    missing = [name for name, val in [("PRITUNL_URL", url), ("PRITUNL_USERNAME", username), ("PRITUNL_PASSWORD", password)] if not val]
+    missing = [
+        name
+        for name, val in [("PRITUNL_URL", url), ("PRITUNL_USERNAME", username), ("PRITUNL_PASSWORD", password)]
+        if not val
+    ]
     if missing:
         print(f"Error: missing required environment variable(s): {', '.join(missing)}", file=sys.stderr)
         sys.exit(1)
