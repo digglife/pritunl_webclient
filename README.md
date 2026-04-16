@@ -16,6 +16,7 @@ A modern, fully-typed Python client for interacting with the Pritunl VPN API.
 - 🎯 **Simple API**: Clean, intuitive interface
 - 🔄 **Auto-Reconnection**: Automatic session management and re-authentication
 - 📦 **Zero Config**: Works out of the box with sensible defaults
+- 🖥️ **CLI Included**: `pritunl` command installed automatically with the package
 
 ## Installation
 
@@ -40,6 +41,46 @@ uv pip install -e .
 ```
 
 ## Quick Start
+
+## CLI Usage
+
+After installation a `pritunl` command is available. Set credentials via environment variables:
+
+```bash
+export PRITUNL_URL=https://vpn.example.com
+export PRITUNL_USERNAME=admin
+export PRITUNL_PASSWORD=secret
+# Optional: disable TLS verification for self-signed certs
+export PRITUNL_VERIFY_TLS=false
+```
+
+### Commands
+
+```bash
+# List all servers (shows id, name, status)
+pritunl list
+
+# Start a server by name or id
+pritunl start "US East"
+pritunl start abc123def
+
+# Stop a server by name or id
+pritunl stop "US East"
+pritunl stop abc123def
+```
+
+### Example output
+
+```
+ID          NAME      STATUS
+----------  --------  -------
+abc123def   US East   online
+def456ghi   EU West   offline
+```
+
+---
+
+## Python API Quick Start
 
 ```python
 from pritunl_webclient import Client
