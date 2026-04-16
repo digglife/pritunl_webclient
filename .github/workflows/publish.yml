@@ -1,0 +1,66 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: 'latest'
+
+      - name: Verify tag matches project version
+        shell: bash
+        run: |
+          TAG_VERSION="${GITHUB_REF_NAME#v}"
+          PROJECT_VERSION=$(python - <<'PY'
+          import pathlib
+
+          text = pathlib.Path('pyproject.toml').read_text(encoding='utf-8')
+          for line in text.splitlines():
+              if line.strip().startswith('version = '):
+                  print(line.split('=', 1)[1].strip().strip('"').strip("'"))
+                  break
+          else:
+              raise SystemExit('Could not find project version in pyproject.toml')
+          PY
+          )
+
+          if [[ "$TAG_VERSION" != "$PROJECT_VERSION" ]]; then
+            echo "Tag version ($TAG_VERSION) does not match pyproject version ($PROJECT_VERSION)"
+            exit 1
+          fi
+
+      - name: Build package
+        run: uv build
+
+      - name: Check distributions
+        shell: bash
+        run: |
+          ls -1 dist/
+          test -n "$(ls -1 dist/*.whl)"
+          test -n "$(ls -1 dist/*.tar.gz)"
+
+      - name: Publish package to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
