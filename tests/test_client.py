@@ -45,15 +45,15 @@ class TestClientInit:
 
     def test_init_strips_trailing_slash(self):
         """Test that init strips trailing slashes from base_url."""
-        client = Client("https://example.com/", verify=False)
+        _ = Client("https://example.com/", verify=False)
 
     def test_init_without_trailing_slash(self):
         """Test that init works without trailing slashes."""
-        client = Client("https://example.com", verify=False)
+        _ = Client("https://example.com", verify=False)
 
     def test_init_default_values(self, base_url):
         """Test that init sets correct default values."""
-        client = Client(base_url)
+        _ = Client(base_url)
 
 
 class TestLogin:
